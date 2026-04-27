@@ -42,7 +42,7 @@ keywords = "zola, theme, minimal"
 # Footer text (optional - comment out to hide).
 footer_text = "This website was built by me using <a href='https://www.getzola.org/'>zola</a> and the <a href='https://github.com/tomwrw/austere-theme-zola'>austere</a> theme."
 # Favicon (optional - comment out to hide).
-# favicon = ""
+favicon = ""
 # Profile picture on home page (optional - comment out to hide).
 profile_picture = "/images/home.jpeg"
 
