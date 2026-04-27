@@ -40,9 +40,9 @@ a.pub-link:hover{background:var(--accent);color:#fff;text-decoration:none}
     {% elif pub.media -%}
     {% set ext = pub.media | split(pat=".") | last %}
     {% if ext == "mp4" or ext == "webm" or ext == "ogg" %}
-    <video src="{{ get_url(path=section.path ~ pub.media) }}" class="project-image" autoplay loop muted playsinline></video>
+    <video src="{{ get_url(path=pub.media) }}" class="project-image" autoplay loop muted playsinline></video>
     {% else %}
-    <img src="{{ get_url(path=section.path ~ pub.media) }}" alt="{{ pub.title }}" class="project-image">
+    <img src="{{ get_url(path=pub.media) }}" alt="{{ pub.title }}" class="project-image">
     {% endif %}
     {% endif -%}
     {% if pub.venue or pub.date -%}

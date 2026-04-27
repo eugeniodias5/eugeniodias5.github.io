@@ -1,29 +1,61 @@
-# Projects Collection
-# Each project can have the following fields:
-#   title       - Project name (required)
-#   description - Brief description
-#   url         - Link to project (external URL or internal path)
-#   image       - Image filename (relative to this folder)
-#   emoji       - Emoji icon displayed before title
-#   date        - Date or date range (e.g., "2024" or "2023-2024")
-#   status      - Current status (e.g., "Active", "Completed", "Archived")
-#   tags        - List of tags/technologies
+[[projects]]
+title = "Data scientist intern"
+emoji = "📊"
+company = "BCA Expertise"
+date = "March 2023 - October 2023"
+location = "Paris, France (remote)"
+media = "images/projects/logo_bca.jpg"
+description = """                                                                                                                           
+  Integrated in the data science team of BCA Expertise, France’s biggest company in the automotive expertise sector. 
+  
+  - Developed a semi-supervised document classification pipeline achieving over 85% accuracy. 
+  - Implemented Donut as multimodal transformer architecture combining text and image inputs. 
+  - Built semi-automatic data cleaning and labeling workflow, significantly accelerating the processing of thousands of samples. 
+  - Developed a vehicle mileage reading system from images using YOLO for detection and EasyOCR for text recognition.
+  """
+urls = []
 
 [[projects]]
-title = "Example Project"
-emoji = "❄️"
-description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-url = "https://github.com/example/project"
-date = "2024"
-status = "Active"
-tags = ["rust", "web", "open-source"]
+title = "Team Member of Academic Project in deep learning"
+emoji = "🎓"
+company = "ATOS"
+date = "September 2022 - February 2023"
+location = "Colombelles, France"
+media = "images/projects/logo_atos.png"
+description = """                                                                                                                           
+  Integrated in the data science team of BCA Expertise, France’s biggest company in the automotive expertise sector. 
+
+  - Collaboration on the development of a deep-learning pipeline for classifying fish species in underwater images.
+  - Applied BiT for Fine-Grained classification, reaching over 80% accuracy.
+  - Applied oversampling techniques to manage the unbalanced train dataset.
+  """
+urls = []
 
 [[projects]]
-title = "Another Project"
-emoji = "🎨"
-description = "Lorem ipsum dolor sit amet consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere. Ut hendrerit semper vel class aptent taciti sociosqu. Ad litora torquent per conubia nostra inceptos himenaeos."
-url = "https://example.com"
-image = "project-screenshot.svg"
-date = "2023-2024"
-status = "Completed"
-tags = ["design", "css"]
+title = "Research Intern in machine learning"
+emoji = "🎓"
+company = "LIRMM"
+date = "May  2022 - August 2022"
+location = "Montpellier, France"
+media = "images/projects/logo_lirmm.jpeg"
+description = """                                                                                                                           
+Integrated in the ICAR (Image & Interaction) team of the LIRMM (Laboratory of Computer Science of Montpellier).
+
+  - Designed and implemented an end-to-end deep learning pipeline featuring detection, tracking, feature extraction, and clustering for dog Re-ID from camera-trap images.
+  - Demonstrated the feasibility of the research, directly leading to the launch of my doctoral research project.
+  - Paper published at [GRETSI](https://hal-lirmm.ccsd.cnrs.fr/lirmm-04261054v1/file/GRETSI2023_BARRELET_DIAS-RIBERO-NETO_SUBSOL_LOIRE_DE-GARINE-WITTCHATITSKY_ReId_Chiens.pdf) (Francophone Conference on Signal and Image Processing) 2023.
+  """
+
+
+[[projects]]
+title = "Java WEB Development Intern"
+emoji = "🔬"
+company = "Federal University of Bahia"
+date = "January  2021 - August 2021"
+location = "Salvador, Brazil (remote)"
+media = "images/projects/logo_ufba.jpeg"
+description = """                                                                                                                           
+Integrated in the WEB developpement team of UFBA. UFBA is in the top-20 best universities in Brazil. 
+  - Collaboration in the development of new features and maintenance of a Java-based web system responsible for managing various administrative features for the Federal University of Bahia.
+  - Management of the PostgreSQL database.
+  """

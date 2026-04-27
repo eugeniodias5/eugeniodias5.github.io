@@ -1,0 +1,79 @@
+{% extends "base.html" -%}
+
+{% block head_extra %}
+<style>
+.project header h2{font-size:1.05rem;margin-bottom:.15rem}
+.pub-venue{margin-bottom:.5rem}
+.pub-links{display:flex;flex-wrap:wrap;gap:.35rem .6rem;margin-bottom:.75rem}
+a.pub-link{display:inline-block;font-size:.78rem;padding:.15em .55em;border-radius:.25rem;border:1px solid var(--accent);color:var(--accent);line-height:1.5;transition:background .2s,color .2s;text-decoration:none}
+a.pub-link:hover{background:var(--accent);color:#fff;text-decoration:none}
+.pub-yt{max-width:220px;aspect-ratio:16/9;float:right;margin:0 0 1rem 1.5rem;border-radius:.4rem;overflow:hidden}
+.pub-yt iframe{width:100%;height:100%;border:0;display:block}
+.project .project-image{max-width:150px;float:right;margin:0 0 0 1rem;object-fit:contain}
+@media(max-width:60em){.pub-yt,.project .project-image{float:none;max-width:100%;width:100%;margin:0 0 0}}
+</style>
+{% endblock head_extra %}
+
+{% block content -%}
+<h1>{{ section.title }}</h1>
+{{ section.content | safe }}
+{% set projects_data = load_data(path="content/" ~ section.path ~ "projects.toml", required=false) -%}
+{% if projects_data and projects_data.projects -%}
+<div class="projects">
+{% for project in projects_data.projects -%}
+<article class="project">
+    <header>
+        {% if project.emoji %}<span class="project-emoji">{{ project.emoji }}</span>{% endif %}
+        <h2>
+          {% if project.urls %}{% set primary = project.urls | first %}<a href="{{ primary.url }}">{{ project.title }}</a>
+          {% elif project.url %}<a href="{{ project.url }}">{{ project.title }}</a>
+          {% else %}{{ project.title }}{% endif %}
+        </h2>
+    </header>
+    {% if project.company -%}
+    <p class="pub-venue s"><strong>{{ project.company }}</strong></p>
+    {% endif -%}
+    {% if project.youtube -%}
+    <div class="pub-yt">
+      <iframe src="https://www.youtube.com/embed/{{ project.youtube }}?mute=1&autoplay=1" title="{{ project.title }}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    {% elif project.media -%}
+    {% set ext = project.media | split(pat=".") | last %}
+    {% if ext == "mp4" or ext == "webm" or ext == "ogg" %}
+    <video src="{{ get_url(path=project.media) }}" class="project-image" autoplay loop muted playsinline></video>
+    {% else %}
+    <img src="{{ get_url(path=project.media) }}" alt="{{ project.title }}" class="project-image">
+    {% endif %}
+    {% elif project.image -%}
+    <img src="{{ get_url(path=section.path ~ project.image) }}" alt="{{ project.title }}" class="project-image">
+    {% endif -%}
+    {% if project.date or project.location -%}
+    <p class="pub-venue s">
+        {% if project.date %}<em>{{ project.date }}</em>{% endif %}
+        {% if project.date and project.location %} · {% endif %}
+        {% if project.location %}{{ project.location }}{% endif %}
+    </p>
+    {% endif -%}
+    {% if project.description %}{{ project.description | markdown | safe }}{% endif %}
+    {% if project.urls -%}
+    <div class="pub-links">
+        {% for link in project.urls -%}
+        <a href="{{ link.url }}" class="pub-link" target="_blank" rel="noopener noreferrer">{{ link.name }}</a>
+        {% endfor %}
+    </div>
+    {% endif -%}
+    {% if project.tags -%}
+    <ul class="tags">
+        {% for tag in project.tags -%}
+        <li>#<a href="{{ get_url(path='tags/' ~ tag | slugify) }}">{{ tag }}</a></li>
+        {% endfor -%}
+    </ul>
+    {% endif -%}
+</article>
+{% if not loop.last %}<hr>{% endif %}
+{% endfor -%}
+</div>
+{% else -%}
+<p>No projects found. Add a <code>projects.toml</code> file to this section.</p>
+{% endif -%}
+{% endblock content -%}

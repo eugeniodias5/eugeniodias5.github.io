@@ -11,7 +11,7 @@ build_search_index = true
 # Default site language.
 default_language = "en"
 # Feeds.
-generate_feeds = true
+generate_feeds = false
 # Specify feed filenames.
 feed_filenames = ["atom.xml", "rss.xml"]
 # Taxonomies.
@@ -36,13 +36,13 @@ anchors = "on"
 # Keywords for SEO.
 keywords = "zola, theme, minimal"
 # Site icon in header (optional - comment out to hide).
-site_icon = "quill.svg"
+# site_icon = "quill.svg"
 # Header strapline (optional - comment out to hide).
 
 # Footer text (optional - comment out to hide).
-footer_text = "This website was built by me using zola and the <a href='https://github.com/tomwrw/austere-theme-zola'>austere</a> theme"
+footer_text = "This website was built by me using <a href='https://www.getzola.org/'>zola</a> and the <a href='https://github.com/tomwrw/austere-theme-zola'>austere</a> theme."
 # Favicon (optional - comment out to hide).
-favicon = "/favicon.ico"
+# favicon = ""
 # Profile picture on home page (optional - comment out to hide).
 profile_picture = "/images/home.jpeg"
 
@@ -52,6 +52,7 @@ social_links = [
   { name = "LinkedIn", url = "https://www.linkedin.com/in/eugeniodias5/", svg = "linkedin.svg" },
   { name = "Scholar", url = "https://scholar.google.fr/citations?user=FQHixj4AAAAJ&hl", svg = "scholar.svg" },
   { name = "Orcid", url = "https://orcid.org/0009-0001-3218-4516", svg = "orcid.svg" },
+  { name = "Mail", url = "mailto:ediasribeiro@lirmm.fr", svg = "mail.svg" },
 ]
 
 # Enable inline SVG icons (uses sprite sheet)
